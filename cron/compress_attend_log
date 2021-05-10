@@ -1,0 +1,11 @@
+#/bin/sh
+
+echo Compressing attendance log
+curr_date=$(date +"%b%d-%Y-%H%M%S")
+user_logs=$(find /home -maxdepth 2 -name "attend.log")
+
+cd /var/log/attend/
+tar -cvz --remove-files -f attend-$curr_date.tar.gz attend.log $user_logs
+
+touch attend.log
+chmod o+w attend.log

@@ -1,0 +1,12 @@
+#/bin/sh
+
+log_file=/var/log/attend/attend.log
+
+echo Creating attend.log for every user
+find /home -maxdepth 2 -name "attend.log" -delete
+while read line; do
+    username=$(echo $line | cut -d ' ' -f1)
+    date=$(echo $line | cut -d ' ' -f1 --complement)
+    echo $date >> /home/$username/attend.log
+done < $log_file
+echo Done

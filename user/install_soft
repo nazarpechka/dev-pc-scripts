@@ -1,0 +1,4 @@
+#/bin/sh
+
+echo Installing soft
+apt instal -y git default-jdk vim > /dev/null 2>&1

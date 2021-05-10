@@ -1,0 +1,5 @@
+#/bin/sh
+
+echo Tracking attendance
+echo $(whoami) $(date +"%b%d-%Y-%H%M%S") >> /var/log/attend/attend.log
+echo Done

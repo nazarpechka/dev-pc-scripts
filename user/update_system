@@ -1,0 +1,4 @@
+#/bin/sh
+
+echo Updating system
+(apt update && apt upgrade -y) > /dev/null 2>&1
